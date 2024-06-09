@@ -11,11 +11,9 @@ Esta es una API RESTful para recibir un archivo PDF, extraer las primeras 30 lí
     git clone <repository-url>
     ```
 
-2. Crea y activa un entorno virtual:
+2. Desde la terminal activa el entorno virtual:
     ```sh
-    python3 -m venv venv
-    o python -m venv venv
-    source venv/Scripts/activate
+    venv/Scripts/activate
     ```
 
 3. Instala las dependencias:

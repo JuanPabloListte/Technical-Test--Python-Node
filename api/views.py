@@ -44,6 +44,6 @@ class CargarPDFView(APIView):
                 fail_silently=False,
             )
         except Exception as e:
-            return JsonResponse({"error": f"Error al procesar el archivo: {str(e)}"}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({"error": f"Error al procesar el archivo. Verifique sus credenciales de correo electronico."}, status=status.HTTP_400_BAD_REQUEST)
 
         return JsonResponse({"message": f"Se extrajo el texto y se envió al correo electrónico: {email}"}, status=status.HTTP_200_OK)
