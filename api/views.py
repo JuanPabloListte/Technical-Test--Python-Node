@@ -7,6 +7,9 @@ from rest_framework import status
 from django.core.mail import send_mail
 from io import BytesIO
 import fitz
+from decouple import config
+
+email_host_user = config('EMAIL_HOST_USER')
 
 class CargarPDFView(APIView):
     parser_classes = (MultiPartParser, FormParser)
@@ -37,7 +40,7 @@ class CargarPDFView(APIView):
             send_mail(
                 'Texto extraido',
                 extracted_text,
-                'juanpilistte@gmail.com',
+                email_host_user,
                 [email],
                 fail_silently=False,
             )
